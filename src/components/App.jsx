@@ -1,8 +1,12 @@
 import React from 'react';
+import Header from './Header.jsx';
+import AboutMe from './AboutMe.jsx';
 
 const App = () => {
   return (
-    <div>
+    <div className="main-div">
+      <Header />
+      <AboutMe />
     </div>
   )
 }
