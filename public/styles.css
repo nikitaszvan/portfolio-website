@@ -1,0 +1,158 @@
+@font-face {
+  font-family: "Avenir Light";
+  src: url("./fonts/Avenir-Light.otf") format(opentype);
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("./fonts/Avenir-Regular.ttf") format(truetype);
+}
+html {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #F5F5F5;
+  height: 7vw;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: fixed;
+}
+header > div {
+  flex: 0.25;
+}
+header > div > * {
+  display: inline-block;
+}
+header > div > img {
+  height: 30px;
+}
+header > div > p {
+  font-family: "Poppins";
+  font-size: 17px;
+  color: #2B0B03;
+}
+header > div > h4 {
+  font-size: 25px;
+  font-family: "Space Grotesk";
+  font-weight: 700;
+  color: #2B0B03;
+}
+header > nav {
+  flex: 0.75;
+}
+header > nav > a {
+  text-decoration: none;
+  font-family: "Avenir Light";
+  color: #2B0B03;
+  font-size: 14px;
+}
+
+.square-logo {
+  height: 14px;
+  width: 14px;
+  background-color: #8D3131;
+}
+
+.about-me-section {
+  background-image: linear-gradient(to right, #D0B3B3 0%, #D0B3B3 40%, #F5F5F5 40%, #F5F5F5 100%);
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 7vw;
+}
+.about-me-section > .about-me-float {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+.about-me-section > .about-me-float > .profile-card {
+  height: 573px;
+  width: 406px;
+  background-image: linear-gradient(to bottom, #F4ECE6 0%, #F4ECE6 90%, #F5F5F5 90%, #F5F5F5 100%);
+  border-radius: 4px;
+  box-shadow: -8px 8px 17px rgba(138, 131, 124, 0.23);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.about-me-section > .about-me-float > .profile-card > img {
+  height: 220px;
+  border-radius: 50%;
+  margin-top: 50px;
+}
+.about-me-section > .about-me-float > .profile-card > h3 {
+  font-size: 30px;
+  font-family: "Space Grotesk";
+  font-weight: 700;
+  color: #2B0B03;
+}
+.about-me-section > .about-me-float > .profile-card > .vertical-line {
+  height: 1.5px;
+  width: 5vw;
+  background-color: #8D3131;
+}
+.about-me-section > .about-me-float > .profile-card > p {
+  font-size: 17px;
+  font-family: "Poppins";
+  letter-spacing: 3px;
+  margin-bottom: 60px;
+}
+.about-me-section > .about-me-float > .profile-card > .social-icons {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+.about-me-section > .about-me-float > .profile-card > .social-icons > * {
+  height: 25px;
+}
+.about-me-section > .about-me-float > .profile-card > .social-icons > img:nth-child(2) {
+  margin-bottom: 3px;
+}
+.about-me-section > .about-me-float > .intro-p {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.about-me-section > .about-me-float > .intro-p > * {
+  margin: 0;
+}
+.about-me-section > .about-me-float > .intro-p > h1 {
+  font-size: 100px;
+  font-family: "Space Grotesk";
+  font-weight: 700;
+  color: #2B0B03;
+}
+.about-me-section > .about-me-float > .intro-p > h5 {
+  font-size: 25px;
+  font-family: "Space Grotesk";
+  font-weight: 700;
+  color: #2b0b03;
+}
+.about-me-section > .about-me-float > .intro-p > .button-container {
+  font-size: 14px;
+  font-family: "Avenir";
+  display: flex;
+  gap: 30px;
+}
+.about-me-section > .about-me-float > .intro-p > .button-container > a {
+  padding: 10px 40px;
+  border: 2px solid #5E4640;
+  border-radius: 100px;
+  text-decoration: none;
+  color: #2B0B03;
+}
+.about-me-section > .about-me-float > .intro-p > p {
+  font-size: 17px;
+  font-family: "Poppins";
+  width: 368px;
+}
+
+/*# sourceMappingURL=styles.css.map */
