@@ -237,7 +237,6 @@ header {
 .resume-section {
     background-color: #F4ECE6;
     width: 100%;
-    height: 1800px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -249,16 +248,18 @@ header {
         justify-content: center;
         gap: 10px;
 
+        > .square-logo {
+            width: 20px;
+            height: 20px;
+        }
+
         > h4 {
             font-family: 'Space Grotesk';
             font-weight: 700;
             font-size: 35px;
         }
 
-        > .square-logo {
-            width: 20px;
-            height: 20px;
-        }
+        
     }
 
     > div:nth-child(2) {
@@ -339,13 +340,43 @@ header {
 }
 
 .projects-section {
-    background-image: linear-gradient(to bottom, #F4ECE6 0%, #F5F5F5 10%, #F5F5F5 100%);;
+    background-image: linear-gradient(to bottom, #F4ECE6 0%, #F5F5F5 10%, #F5F5F5 100%);
     width: 100%;
-    height: 1500px;
+    height: 2500px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+
+    > div:first-child {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        > .square-logo {
+            width: 20px;
+            height: 20px;
+        }
+
+        > h4 {
+            font-family: 'Space Grotesk';
+            font-weight: 700;
+            font-size: 35px;
+        }
+    }
+
+    > p:first-of-type {
+        width: 50%;
+        font-family: 'Poppins';
+        font-size: 17px;
+    }
+}
+
+.project-card {
+    width: 750px;
+    height: 405px;
+    background-color: #F4ECE6;
 }
 
 

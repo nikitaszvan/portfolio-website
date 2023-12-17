@@ -1,9 +1,12 @@
 import React from 'react';
 import ResumeCard from './ResumeCard';
+import resume_data from './resumeData.json';
 
 const Resume = () => {
+
+  const resume_height=650 + (resume_data.length * 450);
   return (
-    <section className="resume-section">
+    <section className="resume-section" style={{height:`${resume_height}px`}}>
         <div>
             <div className="square-logo"></div>
             <h4>Resume</h4>
@@ -12,23 +15,31 @@ const Resume = () => {
         <h4>Professional Experience</h4>
         <a href="">download cv</a>
         </div>
-        <ResumeCard
-        type = 'experience'
-        yearsWorked = "2035 - Present"
-        jobPosition = "JOB POSITION"
-        companyName= "Company Name"
-        companyLocation= "Company Location"
-        cardDescription= "I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. I'm a great place for you to tell a story and let your users know a little more about you."
+        {resume_data.map((items, index) => (
+          (items.type=="experience") && 
+          <ResumeCard
+          key={index}
+          type={items.type}
+          yearsWorked={items.yearsWorked}
+          jobPosition={items.jobPosition}
+          companyName={items.companyName}
+          companyLocation={items.companyLocation}
+          cardDescription={items.cardDescription}
         />
+        ))}
         <h4>Formal Education</h4>
+        {resume_data.map((items, index) => (
+          (items.type=="education") && 
         <ResumeCard
-        type = 'education'
-        yearsAttended = "2035 - 2035"
-        universityName = "UNIVERSITY NAME"
-        degreeLevel= "Degree Level"
-        universityLocation= "University Location"
-        cardDescription= "I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. I'm a great place for you to tell a story and let your users know a little more about you."
+        key={index}
+        type={items.type}
+        yearsAttended={items.yearsAttended}
+        universityName={items.universityName}
+        degreeLevel={items.degreeLevel}
+        universityLocation={items.universityLocation}
+        cardDescription={items.cardDescription}
         />
+        ))}
     </section>
   )
 }
