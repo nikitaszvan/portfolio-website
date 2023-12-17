@@ -9,7 +9,7 @@ const ResumeCard = (props) => {
             <p>{props.type==='experience' ? props.companyName : props.degreeLevel}</p>
             <p>{props.type==='experience' ? props.companyLocation : props.universityLocation}</p>
         </div>
-        <div>{props.cardDescription}</div>
+        <p>{props.cardDescription}</p>
     </div>
   )
 }

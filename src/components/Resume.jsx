@@ -8,8 +8,10 @@ const Resume = () => {
             <div className="square-logo"></div>
             <h4>Resume</h4>
         </div>
+        <div>
         <h4>Professional Experience</h4>
         <a href="">download cv</a>
+        </div>
         <ResumeCard
         type = 'experience'
         yearsWorked = "2035 - Present"
