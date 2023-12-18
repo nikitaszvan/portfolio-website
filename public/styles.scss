@@ -86,7 +86,7 @@ header {
 }
 
 .about-me-section {
-    background-image: linear-gradient(to right, #D0B3B3 0%, #F5F5F5 40%, #F5F5F5 100%);
+    background-image: linear-gradient(to right, rgba(208, 179, 179, 0.2), #F5F5F5, rgba(208, 179, 179, 0.2));
     width: 100%;
     height: 90vh;
     max-height: 800px;
@@ -235,7 +235,7 @@ header {
 }
 
 .resume-section {
-    background-color: #F4ECE6;
+    background-image: linear-gradient(to right, #F4ECE6, #F5F5F5, #F4ECE6);
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -340,7 +340,7 @@ header {
 }
 
 .projects-section {
-    background-image: linear-gradient(to bottom, #F4ECE6 0%, rgba(208, 179, 179, 0.2) 10%, rgba(208, 179, 179, 0.2) 100%);
+    background-image: linear-gradient(to right, rgba(208, 179, 179, 0.2), #F5F5F5, rgba(208, 179, 179, 0.2));
     width: 100%;
     display: flex;
     flex-direction: column;
