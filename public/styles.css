@@ -109,7 +109,7 @@ header > nav > a {
 }
 .about-me-section > .about-me-float > .profile-card > .vertical-line {
   height: 2px;
-  width: 5vw;
+  width: 5px;
   background-color: #8D3131;
 }
 .about-me-section > .about-me-float > .profile-card > p {
@@ -313,7 +313,7 @@ header > nav > a {
   font-size: 35px;
 }
 .projects-section > p:first-of-type {
-  width: 40%;
+  width: 700px;
   font-family: "Poppins";
   font-size: 17px;
 }
