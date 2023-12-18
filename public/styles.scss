@@ -102,7 +102,7 @@ header {
         
         > .profile-card {
             height: 573px;
-            width: 406px;
+            width: 430px;
             background-image: linear-gradient(to bottom, #F4ECE6 0%, #F4ECE6 89%, #F5F5F5 89%, #F5F5F5 100%);
             border-radius: 4px;
             box-shadow: -16px 16px 17px rgba(138, 131, 124, 0.23);
@@ -112,7 +112,7 @@ header {
             justify-content: space-around;
 
             > img {
-                height: 220px;
+                height: 260px;
                 border-radius: 50%;
                 margin-top: 50px;
                 box-shadow: -8px 8px 17px rgba(138, 131, 124, 0.23);
@@ -127,7 +127,7 @@ header {
 
             > .vertical-line {
                 height: 2px;
-                width: 5px;
+                width: 100px;
                 background-color: #8D3131;
             }
 
@@ -184,7 +184,7 @@ header {
                 font-size: 14px;
                 font-family: 'Avenir Heavy';
                 display: flex;
-                gap: 15px;
+                gap: 25px;
                 
                 > a {
                     padding: 8px 40px;
@@ -220,8 +220,8 @@ header {
 }
 .banner-section {
     width: 100%;
-    background-color: rgb(244, 236, 230, 0.7);
-    background-image: linear-gradient(to bottom, #F5F5F5, #F4ECE6);
+    background: linear-gradient(to right, transparent, #F5F5F5, transparent),
+                linear-gradient(to bottom, rgba(208, 179, 179, 0.2), #F4ECE6);
     height: 180px;
     display: flex;
     align-items: center;
@@ -235,7 +235,8 @@ header {
 }
 
 .resume-section {
-    background-image: linear-gradient(to right, #F4ECE6, #F5F5F5, #F4ECE6);
+    background-image: linear-gradient(to right, transparent, #F5F5F5, transparent),
+    linear-gradient(to bottom, #F4ECE6 95%, rgba(208, 179, 179, 0.2));
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -283,7 +284,8 @@ header {
             color: #F5F5F5;
             background-color: #8D3131;
             text-transform: uppercase;
-            font-size: 14px;
+            font-size: 13px;
+            letter-spacing: 1.5px;
             white-space: nowrap;
         }
     }
@@ -303,14 +305,12 @@ header {
     background-color: #F5F5F5;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 180px;
+    justify-content: space-around;
     box-shadow: 0px 8px 17px rgba(138, 131, 124, 0.23);
     
 
     > div:first-child {
-        margin-left: 30px;
-        margin-bottom: 100px;
+        margin-bottom: 130px;
         > h6 {
             font-family: 'Space Grotesk';
             font-weight: 700;
@@ -334,7 +334,6 @@ header {
         width: 50%;
         font-family: 'Poppins';
         font-size: 17px;
-        margin-bottom: 100px;
     }
 
 }
@@ -377,16 +376,29 @@ header {
     height: 405px;
     background-color: #F5F5F5;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-top: 30px;
     margin-bottom: 30px;
     box-shadow: 0px 8px 17px rgba(138, 131, 124, 0.23);
 
     > .vertical-line {
-        width: 10px;
-        background-color: red;
+        width: 12px;
+        height: 90px;
+        background-color: #8D3131;
+        position: relative;
+        bottom: 98px;
     }
 
     > div:nth-child(2) {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 400px;
+        > * {
+            margin: 0;
+        }
 
         > h6 {
             font-family: 'Space Grotesk';
@@ -401,13 +413,22 @@ header {
 
         > p:first-of-type {  
             font-size: 14px;
+            margin-top: 4px;
+        }
+
+        > p:nth-of-type(3) {
+            margin-top: 40px;
         }
     }
 
     > img {
-        height: 400px;
-        width: 300px;
+        height: 405px;
+        width: 320px;
     }
 }
 
+.footer-section {
+    background-color: #F5F5F5;
+    height: 300px;
+}
 

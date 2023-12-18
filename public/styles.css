@@ -86,7 +86,7 @@ header > nav > a {
 }
 .about-me-section > .about-me-float > .profile-card {
   height: 573px;
-  width: 406px;
+  width: 430px;
   background-image: linear-gradient(to bottom, #F4ECE6 0%, #F4ECE6 89%, #F5F5F5 89%, #F5F5F5 100%);
   border-radius: 4px;
   box-shadow: -16px 16px 17px rgba(138, 131, 124, 0.23);
@@ -96,7 +96,7 @@ header > nav > a {
   justify-content: space-around;
 }
 .about-me-section > .about-me-float > .profile-card > img {
-  height: 220px;
+  height: 260px;
   border-radius: 50%;
   margin-top: 50px;
   box-shadow: -8px 8px 17px rgba(138, 131, 124, 0.23);
@@ -109,7 +109,7 @@ header > nav > a {
 }
 .about-me-section > .about-me-float > .profile-card > .vertical-line {
   height: 2px;
-  width: 5px;
+  width: 100px;
   background-color: #8D3131;
 }
 .about-me-section > .about-me-float > .profile-card > p {
@@ -157,7 +157,7 @@ header > nav > a {
   font-size: 14px;
   font-family: "Avenir Heavy";
   display: flex;
-  gap: 15px;
+  gap: 25px;
 }
 .about-me-section > .about-me-float > .intro-p > .button-container > a {
   padding: 8px 40px;
@@ -186,8 +186,7 @@ header > nav > a {
 
 .banner-section {
   width: 100%;
-  background-color: rgba(244, 236, 230, 0.7);
-  background-image: linear-gradient(to bottom, #F5F5F5, #F4ECE6);
+  background: linear-gradient(to right, transparent, #F5F5F5, transparent), linear-gradient(to bottom, rgba(208, 179, 179, 0.2), #F4ECE6);
   height: 180px;
   display: flex;
   align-items: center;
@@ -200,7 +199,7 @@ header > nav > a {
 }
 
 .resume-section {
-  background-image: linear-gradient(to right, #F4ECE6, #F5F5F5, #F4ECE6);
+  background-image: linear-gradient(to right, transparent, #F5F5F5, transparent), linear-gradient(to bottom, #F4ECE6 95%, rgba(208, 179, 179, 0.2));
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -242,7 +241,8 @@ header > nav > a {
   color: #F5F5F5;
   background-color: #8D3131;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 13px;
+  letter-spacing: 1.5px;
   white-space: nowrap;
 }
 .resume-section > h4 {
@@ -259,13 +259,11 @@ header > nav > a {
   background-color: #F5F5F5;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 180px;
+  justify-content: space-around;
   box-shadow: 0px 8px 17px rgba(138, 131, 124, 0.23);
 }
 .resume-card > div:first-child {
-  margin-left: 30px;
-  margin-bottom: 100px;
+  margin-bottom: 130px;
 }
 .resume-card > div:first-child > h6 {
   font-family: "Space Grotesk";
@@ -286,7 +284,6 @@ header > nav > a {
   width: 50%;
   font-family: "Poppins";
   font-size: 17px;
-  margin-bottom: 100px;
 }
 
 .projects-section {
@@ -323,13 +320,28 @@ header > nav > a {
   height: 405px;
   background-color: #F5F5F5;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-top: 30px;
   margin-bottom: 30px;
   box-shadow: 0px 8px 17px rgba(138, 131, 124, 0.23);
 }
 .project-card > .vertical-line {
-  width: 10px;
-  background-color: red;
+  width: 12px;
+  height: 90px;
+  background-color: #8D3131;
+  position: relative;
+  bottom: 98px;
+}
+.project-card > div:nth-child(2) {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 400px;
+}
+.project-card > div:nth-child(2) > * {
+  margin: 0;
 }
 .project-card > div:nth-child(2) > h6 {
   font-family: "Space Grotesk";
@@ -342,10 +354,19 @@ header > nav > a {
 }
 .project-card > div:nth-child(2) > p:first-of-type {
   font-size: 14px;
+  margin-top: 4px;
+}
+.project-card > div:nth-child(2) > p:nth-of-type(3) {
+  margin-top: 40px;
 }
 .project-card > img {
-  height: 400px;
-  width: 300px;
+  height: 405px;
+  width: 320px;
+}
+
+.footer-section {
+  background-color: #F5F5F5;
+  height: 300px;
 }
 
 /*# sourceMappingURL=styles.css.map */
