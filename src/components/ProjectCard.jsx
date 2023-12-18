@@ -6,10 +6,11 @@ const ProjectCard = (props) => {
         <div className="vertical-line"></div>
         <div>
             <h6>{props.projectName}</h6>
-            <p>{props.roleTitle}</p>
-            <p>{props.jobDescrip}</p>
+            <p>{props.projectYear}</p>
+            <p>{props.resourcesUsed}</p>
+            <p>{props.projectDescription}</p>
         </div>
-        <img src={props.src} alt={props.alt}/>
+        <img src={props.imageURL} alt={props.imageAlt}/>
     </div>
   )
 }

@@ -1,10 +1,10 @@
 import React from 'react';
 import ResumeCard from './ResumeCard';
-import resume_data from './resumeData.json';
+import resumeData from './resumeData.json';
 
 const Resume = () => {
 
-  const resume_height=650 + (resume_data.length * 450);
+  const resume_height=650 + (resumeData.length * 450);
   return (
     <section className="resume-section" style={{height:`${resume_height}px`}}>
         <div>
@@ -15,7 +15,7 @@ const Resume = () => {
         <h4>Professional Experience</h4>
         <a href="">download cv</a>
         </div>
-        {resume_data.map((items, index) => (
+        {resumeData.map((items, index) => (
           (items.type=="experience") && 
           <ResumeCard
           key={index}
@@ -28,7 +28,7 @@ const Resume = () => {
         />
         ))}
         <h4>Formal Education</h4>
-        {resume_data.map((items, index) => (
+        {resumeData.map((items, index) => (
           (items.type=="education") && 
         <ResumeCard
         key={index}
