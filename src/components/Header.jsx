@@ -1,4 +1,5 @@
 import React from 'react';
+import { RxSlash } from "react-icons/rx";
 
 const Header = () => {
   return (
@@ -6,7 +7,7 @@ const Header = () => {
         <div>
             <div className="square-logo"></div>
             <h4>Nikita Van</h4>
-            <img src="images/slash.png" alt="slash" />
+            <RxSlash className="slash-icon"/>
             <p>FRONT END DEVELOPER</p>
         </div>
         <nav>

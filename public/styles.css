@@ -40,8 +40,8 @@ header > div > h4 {
   color: rgba(0, 0, 0, 0.8);
   margin-left: 12px;
 }
-header > div > img {
-  height: 30px;
+header > div > .slash-icon {
+  font-size: 30px;
   margin-left: 40px;
 }
 header > div > p {
@@ -118,18 +118,15 @@ header > nav > a {
   letter-spacing: 3px;
   margin-bottom: 60px;
 }
-.about-me-section > .about-me-float > .profile-card > .social-icons {
+.about-me-section > .about-me-float > .profile-card > .social-icon-container {
   margin-bottom: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 40px;
 }
-.about-me-section > .about-me-float > .profile-card > .social-icons > * {
-  height: 25px;
-}
-.about-me-section > .about-me-float > .profile-card > .social-icons > img:nth-child(2) {
-  margin-bottom: 3px;
+.about-me-section > .about-me-float > .profile-card > .social-icon-container > .social-icons {
+  font-size: 25px;
 }
 .about-me-section > .about-me-float > .intro-p {
   display: flex;

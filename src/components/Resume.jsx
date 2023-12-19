@@ -16,7 +16,7 @@ const Resume = () => {
         <a href="">download cv</a>
         </div>
         {resumeData.map((items, index) => (
-          (items.type=="experience") && 
+          (items.type==="experience") && 
           <ResumeCard
           key={index}
           type={items.type}
@@ -29,7 +29,7 @@ const Resume = () => {
         ))}
         <h4>Formal Education</h4>
         {resumeData.map((items, index) => (
-          (items.type=="education") && 
+          (items.type==="education") && 
         <ResumeCard
         key={index}
         type={items.type}

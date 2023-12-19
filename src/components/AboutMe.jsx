@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { TbBrandGithubFilled } from "react-icons/tb";
 import { FaLinkedinIn } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
@@ -25,10 +25,9 @@ const AboutMe = () => {
           <h1>Hello</h1>
           <h5>Here's who I am & what I do</h5>
           <div className="button-container">
-            <a href="">RESUME</a>
-            <a href="">PROJECTS</a>
+            <a href="/">RESUME</a>
+            <a href="/">PROJECTS</a>
           </div>
-          
           <p>{brief_paragraph}</p>
         </div>
       </div>
