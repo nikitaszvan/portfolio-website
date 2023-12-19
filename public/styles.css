@@ -43,6 +43,7 @@ header > div > h4 {
 header > div > .slash-icon {
   font-size: 30px;
   margin-left: 40px;
+  margin-right: 0px;
 }
 header > div > p {
   font-family: "Poppins";
