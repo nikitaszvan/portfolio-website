@@ -138,18 +138,15 @@ header {
                 margin-bottom: 60px;
             }
 
-            > .social-icons {
+            > .social-icon-container {
                 margin-bottom: 10px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 gap: 40px;
-                > * {
-                    height: 25px;
-                }
 
-                > img:nth-child(2) {
-                    margin-bottom: 3px;
+                > social-icons {
+                    font-size: 25px;
                 }
             }
 

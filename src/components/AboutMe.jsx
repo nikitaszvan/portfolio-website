@@ -1,4 +1,7 @@
 import React from 'react'
+import { TbBrandGithubFilled } from "react-icons/tb";
+import { FaLinkedinIn } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 const AboutMe = () => {
 
@@ -12,10 +15,10 @@ const AboutMe = () => {
           <h3>Nikita Van</h3>
           <div className="vertical-line"></div>
           <p>FRONT-END DEVELOPER</p>
-          <div className="social-icons">
-            <img src="images/github.png" alt="github" />
-            <img src="images/linkedin.png" alt="linkedin" />
-            <img src="images/mail.png" alt="email" />
+          <div className="social-icon-container">
+            <TbBrandGithubFilled className="social-icons"/>
+            <FaLinkedinIn className="social-icons"/>
+            <MdEmail className="social-icons"/>
           </div>
         </div>
         <div className="intro-p">
