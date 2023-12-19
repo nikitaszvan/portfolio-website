@@ -27,3 +27,4 @@ yarn-error.log*
 .sass-cache/*
 public/styles.css.map
 public/styles.scss
+public/styles.scss
