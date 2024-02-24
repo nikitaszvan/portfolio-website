@@ -6,7 +6,7 @@ const Resume = () => {
 
   const resume_height=650 + (resumeData.length * 450);
   return (
-    <section className="resume-section" style={{height:`${resume_height}px`}}>
+    <section id="resume-section" style={{height:`${resume_height}px`}}>
         <div>
             <div className="square-logo"></div>
             <h4>Resume</h4>

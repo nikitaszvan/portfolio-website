@@ -170,6 +170,16 @@ header > nav > a {
   padding-top: 11px;
   padding-bottom: 7px;
   background-color: #8D3131;
+  transition: background-color 0.3s ease-in, color 0.3s ease-in;
+}
+.about-me-section > .about-me-float > .intro-p > .button-container a:first-child:hover {
+  border: 4px solid #8D3131;
+  color: #8D3131;
+  padding-top: 7px;
+  padding-bottom: 3px;
+  padding-left: 36.5px;
+  padding-right: 36.5px;
+  background-color: transparent;
 }
 .about-me-section > .about-me-float > .intro-p > .button-container a:nth-child(2) {
   padding-left: 35px;
@@ -185,17 +195,60 @@ header > nav > a {
   width: 100%;
   background: linear-gradient(to right, transparent, #F5F5F5, transparent), linear-gradient(to bottom, rgba(208, 179, 179, 0.2), #F4ECE6);
   height: 180px;
+  padding-top: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 80px;
+  gap: 30px;
+  z-index: 3;
 }
-.banner-section > .react-icons {
+.banner-section > div > .react-icons {
   font-size: 60px;
   color: rgba(0, 0, 0, 0.8);
+  transition: font-size 0.6s ease-in-out, color 0.6s ease-in-out;
+}
+.banner-section > div > .cover-svg {
+  width: 75px;
+  height: 60px;
+  position: relative;
+  bottom: 65.2px;
+  transition: transform 0.6s ease-in-out, translate 0.6s ease-in-out;
+}
+.banner-section > div > .cover-svg:hover {
+  transform: scale(2.5) translate(16px, -17.5px);
+}
+.banner-section > div > .react-icons.hovered {
+  font-size: 150px;
+}
+.banner-section > div > .react-icons.close-hovered {
+  font-size: 100px;
+}
+.banner-section > div > .rotating {
+  animation: transform-icon 5s infinite linear;
+}
+@keyframes transform-icon {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+.banner-section > div > .cover-svg.close-hovered {
+  transform: scale(1.67) translate(11.5px, -11px);
+}
+.banner-section > div > .cover-svg > h3 {
+  position: relative;
+  top: 55px;
+  font-family: "Space Grotesk";
+  color: black;
+  transition: opacity 0.5s ease-in-out;
+  text-align: center;
+  opacity: 0;
+  font-size: 10px;
 }
 
-.resume-section {
+#resume-section {
   background-image: linear-gradient(to right, transparent, #F5F5F5, transparent), linear-gradient(to bottom, #F4ECE6 95%, rgba(208, 179, 179, 0.2));
   width: 100%;
   display: flex;
@@ -203,33 +256,33 @@ header > nav > a {
   align-items: center;
   justify-content: space-evenly;
 }
-.resume-section > div:first-child {
+#resume-section > div:first-child {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
 }
-.resume-section > div:first-child > .square-logo {
+#resume-section > div:first-child > .square-logo {
   width: 20px;
   height: 20px;
 }
-.resume-section > div:first-child > h4 {
+#resume-section > div:first-child > h4 {
   font-family: "Space Grotesk";
   font-weight: 700;
   font-size: 35px;
 }
-.resume-section > div:nth-child(2) {
+#resume-section > div:nth-child(2) {
   display: flex;
   align-items: center;
   gap: 320px;
   justify-content: center;
 }
-.resume-section > div:nth-child(2) > h4 {
+#resume-section > div:nth-child(2) > h4 {
   font-family: "Space Grotesk";
   font-weight: 700;
   font-size: 25px;
 }
-.resume-section > div:nth-child(2) > a {
+#resume-section > div:nth-child(2) > a {
   font-family: "Avenir Heavy";
   padding: 12px 33px 9px 33px;
   border-radius: 100px;
@@ -242,7 +295,7 @@ header > nav > a {
   letter-spacing: 1.5px;
   white-space: nowrap;
 }
-.resume-section > h4 {
+#resume-section > h4 {
   font-family: "Space Grotesk";
   font-weight: 700;
   font-size: 25px;
@@ -283,7 +336,7 @@ header > nav > a {
   font-size: 17px;
 }
 
-.projects-section {
+#projects-section {
   background-image: linear-gradient(to right, rgba(208, 179, 179, 0.2), #F5F5F5, rgba(208, 179, 179, 0.2));
   width: 100%;
   display: flex;
@@ -291,22 +344,22 @@ header > nav > a {
   align-items: center;
   justify-content: space-evenly;
 }
-.projects-section > div:first-child {
+#projects-section > div:first-child {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
 }
-.projects-section > div:first-child > .square-logo {
+#projects-section > div:first-child > .square-logo {
   width: 20px;
   height: 20px;
 }
-.projects-section > div:first-child > h4 {
+#projects-section > div:first-child > h4 {
   font-family: "Space Grotesk";
   font-weight: 700;
   font-size: 35px;
 }
-.projects-section > p:first-of-type {
+#projects-section > p:first-of-type {
   width: 700px;
   font-family: "Poppins";
   font-size: 17px;

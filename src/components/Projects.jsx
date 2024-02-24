@@ -6,7 +6,7 @@ const Projects = () => {
   const project_height = 400 + (500 * projectData.length);
   const p_paragraph = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
    return (
-    <section className="projects-section" style={{height:`${project_height}px`}}>
+    <section id="projects-section" style={{height:`${project_height}px`}}>
       <div>
         <div className="square-logo"></div>
         <h4>Projects</h4>

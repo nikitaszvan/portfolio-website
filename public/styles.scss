@@ -198,6 +198,17 @@ header {
                     padding-top: 11px;
                     padding-bottom: 7px;
                     background-color: #8D3131;
+                    transition: background-color 0.3s ease-in, color 0.3s ease-in;
+                }
+
+                a:first-child:hover {
+                    border: 4px solid #8D3131;
+                    color: #8D3131;
+                    padding-top: 7px;
+                    padding-bottom: 3px;
+                    padding-left: 36.5px;
+                    padding-right: 36.5px;
+                    background-color: transparent;
                 }
 
                 a:nth-child(2) {
@@ -220,18 +231,74 @@ header {
     background: linear-gradient(to right, transparent, #F5F5F5, transparent),
                 linear-gradient(to bottom, rgba(208, 179, 179, 0.2), #F4ECE6);
     height: 180px;
+    padding-top: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 80px;
+    gap: 30px;
+    z-index: 3;
     
-    > .react-icons {
+    > div > .react-icons {
     font-size: 60px;
     color:rgba(0, 0, 0, 0.80);
+    transition: font-size 0.6s ease-in-out, color 0.6s ease-in-out;
     }
+
+    > div > .cover-svg {
+        width: 75px;
+        height: 60px;
+        position: relative;
+        bottom: 65.2px;
+        transition: transform 0.6s ease-in-out, translate 0.6s ease-in-out;
+    }
+
+    > div > .cover-svg:hover{
+        transform: scale(2.5) translate(16px, -17.5px);
+        
+
+        // x y
+    }
+
+
+    > div > .react-icons.hovered{
+        font-size: 150px;
+
+    }
+
+    > div > .react-icons.close-hovered {
+        font-size: 100px;
+    }
+
+    > div > .rotating {
+        animation: transform-icon 5s infinite linear;
+    }
+    @keyframes transform-icon {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(359deg);
+        }
+      }
+
+    > div > .cover-svg.close-hovered {
+        transform: scale(1.67) translate(11.5px, -11px);
+    }
+
+    > div > .cover-svg > h3 {
+        position: relative;
+        top: 55px;
+        font-family: 'Space Grotesk';
+        color: black;
+        transition: opacity 0.5s ease-in-out;
+        text-align: center;
+        opacity: 0;
+        font-size: 10px;
+    }
+
 }
 
-.resume-section {
+#resume-section {
     background-image: linear-gradient(to right, transparent, #F5F5F5, transparent),
     linear-gradient(to bottom, #F4ECE6 95%, rgba(208, 179, 179, 0.2));
     width: 100%;
@@ -335,7 +402,7 @@ header {
 
 }
 
-.projects-section {
+#projects-section {
     background-image: linear-gradient(to right, rgba(208, 179, 179, 0.2), #F5F5F5, rgba(208, 179, 179, 0.2));
     width: 100%;
     display: flex;
@@ -428,4 +495,8 @@ header {
     background-color: #F5F5F5;
     height: 300px;
 }
+
+
+
+
 

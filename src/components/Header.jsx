@@ -12,8 +12,8 @@ const Header = () => {
         </div>
         <nav>
             <a href="/">ABOUT ME</a>
-            <a href="/">RESUME</a>
-            <a href="/">PROJECTS</a>
+            <a href="#resume-section">RESUME</a>
+            <a href="#projects-section">PROJECTS</a>
             <a href="/">CONTACT</a>
         </nav>
     </header>
