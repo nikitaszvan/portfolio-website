@@ -1,13 +1,10 @@
 import {
   Container,
   Hero,
-  Background,
-  RadialGradient,
-  BallCanvasContainer,
-  Ellipse
 } from './landing-page.styles'
 
-import LandingPageGradient from '../landing-page-gradient/landing-page-gradient.component.tsx';
+import LandingPageBackground from '../landing-page-background/landing-page-background.component';
+import Particles from '../particles/particles.component';
 
 const LandingPage = () => {
 
@@ -15,13 +12,10 @@ const LandingPage = () => {
   return (
     <Container>
       <Hero>
-        <Background>
-          <RadialGradient />
-          <BallCanvasContainer id="container">
-            <LandingPageGradient />
-          </BallCanvasContainer>
-          <Ellipse />
-        </Background>
+        <LandingPageBackground>
+          <Particles/>
+        </LandingPageBackground>
+
       </Hero>
     </Container>
   );
