@@ -1,502 +1,422 @@
 @font-face {
-    font-family: 'Avenir Light';
-    src: url('./fonts/Avenir-Light.otf') format(opentype);
+  font-family: "Avenir Light";
+  src: url("./fonts/Avenir-Light.otf") format(opentype);
 }
-
 @font-face {
-    font-family: 'Avenir';
-    src: url('./fonts/Avenir-Regular.ttf') format(truetype);
+  font-family: "Avenir";
+  src: url("./fonts/Avenir-Regular.ttf") format(truetype);
 }
-
 @font-face {
-    font-family: 'Avenir Heavy';
-    src: url('./fonts/Avenir-Heavy.ttf') format(truetype);
+  font-family: "Avenir Heavy";
+  src: url("./fonts/Avenir-Heavy.ttf") format(truetype);
 }
-
 html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    background-color: #F5F5F5;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #F5F5F5;
 }
-
 
 header {
-    background-color: #F5F5F5;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-
-    > div {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-left: 50px;
-
-            > * {
-                display: inline;
-            }
-            
-            > h4 {
-                font-size: 25px;
-                font-family: 'Space Grotesk';
-                font-weight: 700;
-                color: rgba(0, 0, 0, 0.80);
-                margin-left: 12px;
-            }
-
-            > .slash-icon {
-                font-size: 30px;
-                margin-left: 40px;
-            }
-
-            > p {
-                font-family: 'Poppins';
-                font-size: 17px;
-                color: rgba(0, 0, 0, 0.80);
-                padding-top: 3px;
-            }
-
-            
-        }
-
-    > nav {
-        position: absolute;
-        right: 55px;
-        
-            > a {
-                text-decoration: none;
-                font-family: 'Avenir Light';
-                color: rgba(0, 0, 0, 0.80);
-                font-size: 14px;
-                display: inline-block;
-                margin-left: 30px;
-            }
-        }
-    }
-    
-
+  background-color: #F5F5F5;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 50px;
+}
+header > div > * {
+  display: inline;
+}
+header > div > h4 {
+  font-size: 25px;
+  font-family: "Space Grotesk";
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.8);
+  margin-left: 12px;
+}
+header > div > .slash-icon {
+  font-size: 30px;
+  margin-left: 40px;
+}
+header > div > p {
+  font-family: "Poppins";
+  font-size: 17px;
+  color: rgba(0, 0, 0, 0.8);
+  padding-top: 3px;
+}
+header > nav {
+  position: absolute;
+  right: 55px;
+}
+header > nav > a {
+  text-decoration: none;
+  font-family: "Avenir Light";
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 14px;
+  display: inline-block;
+  margin-left: 30px;
+}
 
 .square-logo {
-    height: 14px;
-    width: 14px;
-    background-color: #8D3131;
+  height: 14px;
+  width: 14px;
+  background-color: #8D3131;
 }
 
 .about-me-section {
-    background-image: linear-gradient(to right, rgba(208, 179, 179, 0.2), #F5F5F5, rgba(208, 179, 179, 0.2));
-    width: 100%;
-    height: 90vh;
-    max-height: 800px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-
-    > .about-me-float {
-        display: flex;
-        justify-content: center;
-        gap: 60px;
-        
-        > .profile-card {
-            height: 573px;
-            width: 430px;
-            background-image: linear-gradient(to bottom, #F4ECE6 0%, #F4ECE6 89%, #F5F5F5 89%, #F5F5F5 100%);
-            border-radius: 4px;
-            box-shadow: -16px 16px 17px rgba(138, 131, 124, 0.23);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-around;
-
-            > img {
-                height: 260px;
-                border-radius: 50%;
-                margin-top: 50px;
-                box-shadow: -8px 8px 17px rgba(138, 131, 124, 0.23);
-            }
-
-            > h3 {
-                font-size: 30px;
-                font-family: 'Space Grotesk';
-                font-weight: 700;
-                color: rgba(0, 0, 0, 0.80);
-            }
-
-            > .vertical-line {
-                height: 2px;
-                width: 100px;
-                background-color: #8D3131;
-            }
-
-            > p {
-                font-size: 17px;
-                font-family: 'Poppins';
-                letter-spacing: 3px;
-                margin-bottom: 60px;
-            }
-
-            > .social-icon-container {
-                margin-bottom: 10px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 40px;
-
-                > .social-icons {
-                    font-size: 25px;
-                }
-            }
-
-        }
-
-        > .intro-p {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-
-            > * {
-                margin: 0;
-            }
-
-            > h1 {
-                font-size: 100px;
-                font-family: 'Space Grotesk';
-                font-weight: 700;
-                color: rgba(0, 0, 0, 0.80);
-                position: relative;
-                right: 5px;
-            }
-
-            > h5 {
-                font-size: 25px;
-                font-family: 'Space Grotesk';
-                font-weight: 700;
-                color: rgba(0, 0, 0, 0.80);
-            }
-
-            > .button-container {
-                font-size: 14px;
-                font-family: 'Avenir Heavy';
-                display: flex;
-                gap: 25px;
-                
-                > a {
-                    padding: 8px 40px;
-                    border: 2px solid #5E4640;
-                    border-radius: 100px;
-                    text-decoration: none;
-                    color: rgba(0, 0, 0, 0.80);
-                    box-shadow: -8px 8px 17px rgba(138, 131, 124, 0.23);
-                }
-
-                a:first-child {
-                    border: none;
-                    color: #F5F5F5;
-                    padding-top: 11px;
-                    padding-bottom: 7px;
-                    background-color: #8D3131;
-                    transition: background-color 0.3s ease-in, color 0.3s ease-in;
-                }
-
-                a:first-child:hover {
-                    border: 4px solid #8D3131;
-                    color: #8D3131;
-                    padding-top: 7px;
-                    padding-bottom: 3px;
-                    padding-left: 36.5px;
-                    padding-right: 36.5px;
-                    background-color: transparent;
-                }
-
-                a:nth-child(2) {
-                    padding-left: 35px;
-                    padding-right: 35px;
-                }
-            }
-
-            > p {
-                font-size: 17px;
-                font-family: 'Poppins';
-                width: 368px;
-            }
-
-        }
-    }
+  background-image: linear-gradient(to right, rgba(208, 179, 179, 0.2), #F5F5F5, rgba(208, 179, 179, 0.2));
+  width: 100%;
+  height: 90vh;
+  max-height: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
+.about-me-section > .about-me-float {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+}
+.about-me-section > .about-me-float > .profile-card {
+  height: 573px;
+  width: 430px;
+  background-image: linear-gradient(to bottom, #F4ECE6 0%, #F4ECE6 89%, #F5F5F5 89%, #F5F5F5 100%);
+  border-radius: 4px;
+  box-shadow: -16px 16px 17px rgba(138, 131, 124, 0.23);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.about-me-section > .about-me-float > .profile-card > img {
+  height: 260px;
+  border-radius: 50%;
+  margin-top: 50px;
+  box-shadow: -8px 8px 17px rgba(138, 131, 124, 0.23);
+}
+.about-me-section > .about-me-float > .profile-card > h3 {
+  font-size: 30px;
+  font-family: "Space Grotesk";
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.8);
+}
+.about-me-section > .about-me-float > .profile-card > .vertical-line {
+  height: 2px;
+  width: 100px;
+  background-color: #8D3131;
+}
+.about-me-section > .about-me-float > .profile-card > p {
+  font-size: 17px;
+  font-family: "Poppins";
+  letter-spacing: 3px;
+  margin-bottom: 60px;
+}
+.about-me-section > .about-me-float > .profile-card > .social-icon-container {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+.about-me-section > .about-me-float > .profile-card > .social-icon-container > .social-icons {
+  font-size: 25px;
+}
+.about-me-section > .about-me-float > .intro-p {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.about-me-section > .about-me-float > .intro-p > * {
+  margin: 0;
+}
+.about-me-section > .about-me-float > .intro-p > h1 {
+  font-size: 100px;
+  font-family: "Space Grotesk";
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.8);
+  position: relative;
+  right: 5px;
+}
+.about-me-section > .about-me-float > .intro-p > h5 {
+  font-size: 25px;
+  font-family: "Space Grotesk";
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.8);
+}
+.about-me-section > .about-me-float > .intro-p > .button-container {
+  font-size: 14px;
+  font-family: "Avenir Heavy";
+  display: flex;
+  gap: 25px;
+}
+.about-me-section > .about-me-float > .intro-p > .button-container > a {
+  padding: 8px 40px;
+  border: 2px solid #5E4640;
+  border-radius: 100px;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.8);
+  box-shadow: -8px 8px 17px rgba(138, 131, 124, 0.23);
+}
+.about-me-section > .about-me-float > .intro-p > .button-container a:first-child {
+  border: none;
+  color: #F5F5F5;
+  padding-top: 11px;
+  padding-bottom: 7px;
+  background-color: #8D3131;
+  transition: background-color 0.3s ease-in, color 0.3s ease-in;
+}
+.about-me-section > .about-me-float > .intro-p > .button-container a:first-child:hover {
+  border: 4px solid #8D3131;
+  color: #8D3131;
+  padding-top: 7px;
+  padding-bottom: 3px;
+  padding-left: 36.5px;
+  padding-right: 36.5px;
+  background-color: transparent;
+}
+.about-me-section > .about-me-float > .intro-p > .button-container a:nth-child(2) {
+  padding-left: 35px;
+  padding-right: 35px;
+}
+.about-me-section > .about-me-float > .intro-p > p {
+  font-size: 17px;
+  font-family: "Poppins";
+  width: 368px;
+}
+
 .banner-section {
-    width: 100%;
-    background: linear-gradient(to right, transparent, #F5F5F5, transparent),
-                linear-gradient(to bottom, rgba(208, 179, 179, 0.2), #F4ECE6);
-    height: 180px;
-    padding-top: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    z-index: 3;
-    
-    > div > .react-icons {
-    font-size: 60px;
-    color:rgba(0, 0, 0, 0.80);
-    transition: font-size 0.6s ease-in-out, color 0.6s ease-in-out;
-    }
-
-    > div > .cover-svg {
-        width: 75px;
-        height: 60px;
-        position: relative;
-        bottom: 65.2px;
-        transition: transform 0.6s ease-in-out, translate 0.6s ease-in-out;
-    }
-
-    > div > .cover-svg:hover{
-        transform: scale(2.5) translate(16px, -17.5px);
-        
-
-        // x y
-    }
-
-
-    > div > .react-icons.hovered{
-        font-size: 150px;
-
-    }
-
-    > div > .react-icons.close-hovered {
-        font-size: 100px;
-    }
-
-    > div > .rotating {
-        animation: transform-icon 5s infinite linear;
-    }
-    @keyframes transform-icon {
-        from {
-          transform: rotate(0deg);
-        }
-        to {
-          transform: rotate(359deg);
-        }
-      }
-
-    > div > .cover-svg.close-hovered {
-        transform: scale(1.67) translate(11.5px, -11px);
-    }
-
-    > div > .cover-svg > h3 {
-        position: relative;
-        top: 55px;
-        font-family: 'Space Grotesk';
-        color: black;
-        transition: opacity 0.5s ease-in-out;
-        text-align: center;
-        opacity: 0;
-        font-size: 10px;
-    }
-
+  width: 100%;
+  background: linear-gradient(to right, transparent, #F5F5F5, transparent), linear-gradient(to bottom, rgba(208, 179, 179, 0.2), #F4ECE6);
+  height: 180px;
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  z-index: 3;
+}
+.banner-section > div > .react-icons {
+  font-size: 60px;
+  color: rgba(0, 0, 0, 0.8);
+  transition: font-size 0.6s ease-in-out, color 0.6s ease-in-out;
+}
+.banner-section > div > .cover-svg {
+  width: 75px;
+  height: 60px;
+  position: relative;
+  bottom: 65.2px;
+  transition: transform 0.6s ease-in-out, translate 0.6s ease-in-out;
+}
+.banner-section > div > .cover-svg:hover {
+  transform: scale(2.5) translate(16px, -17.5px);
+}
+.banner-section > div > .react-icons.hovered {
+  font-size: 150px;
+}
+.banner-section > div > .react-icons.close-hovered {
+  font-size: 100px;
+}
+.banner-section > div > .rotating {
+  animation: transform-icon 5s infinite linear;
+}
+@keyframes transform-icon {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+.banner-section > div > .cover-svg.close-hovered {
+  transform: scale(1.67) translate(11.5px, -11px);
+}
+.banner-section > div > .cover-svg > h3 {
+  position: relative;
+  top: 55px;
+  font-family: "Space Grotesk";
+  color: black;
+  transition: opacity 0.5s ease-in-out;
+  text-align: center;
+  opacity: 0;
+  font-size: 10px;
 }
 
 #resume-section {
-    background-image: linear-gradient(to right, transparent, #F5F5F5, transparent),
-    linear-gradient(to bottom, #F4ECE6 95%, rgba(208, 179, 179, 0.2));
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-
-    > div:first-child {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-
-        > .square-logo {
-            width: 20px;
-            height: 20px;
-        }
-
-        > h4 {
-            font-family: 'Space Grotesk';
-            font-weight: 700;
-            font-size: 35px;
-        }
-
-        
-    }
-
-    > div:nth-child(2) {
-        display: flex;
-        align-items: center;
-        gap: 320px;
-        justify-content: center;
-
-        > h4 {
-            font-family: 'Space Grotesk';
-            font-weight: 700;
-            font-size: 25px;
-        }
-
-        > a {
-            font-family: 'Avenir Heavy';
-            padding: 12px 33px 9px 33px;
-            border-radius: 100px;
-            text-decoration: none;
-            border: none;
-            color: #F5F5F5;
-            background-color: #8D3131;
-            text-transform: uppercase;
-            font-size: 13px;
-            letter-spacing: 1.5px;
-            white-space: nowrap;
-        }
-    }
-
-    > h4 {
-        font-family: 'Space Grotesk';
-        font-weight: 700;
-        font-size: 25px;
-        position: relative;
-        right: 290px;
-    }
+  background-image: linear-gradient(to right, transparent, #F5F5F5, transparent), linear-gradient(to bottom, #F4ECE6 95%, rgba(208, 179, 179, 0.2));
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+#resume-section > div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+#resume-section > div:first-child > .square-logo {
+  width: 20px;
+  height: 20px;
+}
+#resume-section > div:first-child > h4 {
+  font-family: "Space Grotesk";
+  font-weight: 700;
+  font-size: 35px;
+}
+#resume-section > div:nth-child(2) {
+  display: flex;
+  align-items: center;
+  gap: 320px;
+  justify-content: center;
+}
+#resume-section > div:nth-child(2) > h4 {
+  font-family: "Space Grotesk";
+  font-weight: 700;
+  font-size: 25px;
+}
+#resume-section > div:nth-child(2) > a {
+  font-family: "Avenir Heavy";
+  padding: 12px 33px 9px 33px;
+  border-radius: 100px;
+  text-decoration: none;
+  border: none;
+  color: #F5F5F5;
+  background-color: #8D3131;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  white-space: nowrap;
+}
+#resume-section > h4 {
+  font-family: "Space Grotesk";
+  font-weight: 700;
+  font-size: 25px;
+  position: relative;
+  right: 290px;
 }
 
 .resume-card {
-    width: 850px;
-    height: 450px;
-    background-color: #F5F5F5;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    box-shadow: 0px 8px 17px rgba(138, 131, 124, 0.23);
-    
-
-    > div:first-child {
-        margin-bottom: 130px;
-        > h6 {
-            font-family: 'Space Grotesk';
-            font-weight: 700;
-            font-size: 20px;
-        }
-
-        > p {
-            font-family: 'Space Grotesk';
-            font-size: 14px;
-            color: #8D3131;
-        }
-
-        > p:first-of-type {
-            font-family: 'Space Grotesk';
-            font-size: 17px;
-            color: black;
-        }
-    }
-
-    > p:first-of-type {
-        width: 50%;
-        font-family: 'Poppins';
-        font-size: 17px;
-    }
-
+  width: 850px;
+  height: 450px;
+  background-color: #F5F5F5;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0px 8px 17px rgba(138, 131, 124, 0.23);
+}
+.resume-card > div:first-child {
+  margin-bottom: 130px;
+}
+.resume-card > div:first-child > h6 {
+  font-family: "Space Grotesk";
+  font-weight: 700;
+  font-size: 20px;
+}
+.resume-card > div:first-child > p {
+  font-family: "Space Grotesk";
+  font-size: 14px;
+  color: #8D3131;
+}
+.resume-card > div:first-child > p:first-of-type {
+  font-family: "Space Grotesk";
+  font-size: 17px;
+  color: black;
+}
+.resume-card > p:first-of-type {
+  width: 50%;
+  font-family: "Poppins";
+  font-size: 17px;
 }
 
 #projects-section {
-    background-image: linear-gradient(to right, rgba(208, 179, 179, 0.2), #F5F5F5, rgba(208, 179, 179, 0.2));
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-
-    > div:first-child {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-
-        > .square-logo {
-            width: 20px;
-            height: 20px;
-        }
-
-        > h4 {
-            font-family: 'Space Grotesk';
-            font-weight: 700;
-            font-size: 35px;
-        }
-    }
-
-    > p:first-of-type {
-        width: 700px;
-        font-family: 'Poppins';
-        font-size: 17px;
-    }
+  background-image: linear-gradient(to right, rgba(208, 179, 179, 0.2), #F5F5F5, rgba(208, 179, 179, 0.2));
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+#projects-section > div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+#projects-section > div:first-child > .square-logo {
+  width: 20px;
+  height: 20px;
+}
+#projects-section > div:first-child > h4 {
+  font-family: "Space Grotesk";
+  font-weight: 700;
+  font-size: 35px;
+}
+#projects-section > p:first-of-type {
+  width: 700px;
+  font-family: "Poppins";
+  font-size: 17px;
 }
 
 .project-card {
-    width: 850px;
-    height: 405px;
-    background-color: #F5F5F5;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    box-shadow: 0px 8px 17px rgba(138, 131, 124, 0.23);
-
-    > .vertical-line {
-        width: 12px;
-        height: 90px;
-        background-color: #8D3131;
-        position: relative;
-        bottom: 98px;
-    }
-
-    > div:nth-child(2) {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 400px;
-        > * {
-            margin: 0;
-        }
-
-        > h6 {
-            font-family: 'Space Grotesk';
-            font-weight: 700;
-            font-size: 20px;
-        }
-
-        > p {
-            font-family: 'Poppins';
-            font-size: 17px;
-        }
-
-        > p:first-of-type {  
-            font-size: 14px;
-            margin-top: 4px;
-        }
-
-        > p:nth-of-type(3) {
-            margin-top: 40px;
-        }
-    }
-
-    > img {
-        height: 405px;
-        width: 320px;
-    }
+  width: 850px;
+  height: 405px;
+  background-color: #F5F5F5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0px 8px 17px rgba(138, 131, 124, 0.23);
+}
+.project-card > .vertical-line {
+  width: 12px;
+  height: 90px;
+  background-color: #8D3131;
+  position: relative;
+  bottom: 98px;
+}
+.project-card > div:nth-child(2) {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 400px;
+}
+.project-card > div:nth-child(2) > * {
+  margin: 0;
+}
+.project-card > div:nth-child(2) > h6 {
+  font-family: "Space Grotesk";
+  font-weight: 700;
+  font-size: 20px;
+}
+.project-card > div:nth-child(2) > p {
+  font-family: "Poppins";
+  font-size: 17px;
+}
+.project-card > div:nth-child(2) > p:first-of-type {
+  font-size: 14px;
+  margin-top: 4px;
+}
+.project-card > div:nth-child(2) > p:nth-of-type(3) {
+  margin-top: 40px;
+}
+.project-card > img {
+  height: 405px;
+  width: 320px;
 }
 
 .footer-section {
-    background-color: #F5F5F5;
-    height: 300px;
+  background-color: #F5F5F5;
+  height: 300px;
 }
 
-
-
-
-
+/*# sourceMappingURL=styles.css.map */
