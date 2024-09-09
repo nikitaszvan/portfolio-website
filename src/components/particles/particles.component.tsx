@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState, FC } from "react";
 import { ParticlesContainer } from "./particles.styles";
 
-interface MousePosition {
+type MousePositionType = {
   x: number;
   y: number;
 }
 
-function MousePosition(): MousePosition {
-  const [mousePosition, setMousePosition] = useState<MousePosition>({
+const MousePosition = (): MousePositionType => {
+  const [mousePosition, setMousePosition] = useState<MousePositionType>({
     x: 0,
     y: 0,
   });
@@ -56,7 +56,7 @@ function hexToRgb(hex: string): number[] {
 }
 
 const Particles: FC<ParticlesProps> = ({
-  quantity = 100,
+  quantity = 200,
   staticity = 50,
   ease = 50,
   size = 0.4,

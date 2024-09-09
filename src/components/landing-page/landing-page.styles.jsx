@@ -29,3 +29,27 @@ export const Hero = styled.div`
   width: 100%;
 `;
 
+export const NumberColumn = styled.div`
+    color: white;
+    font-family: 'Jersey 25';
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    > h1 {
+        font-size: 48px;
+        margin: 0;
+    }
+`
+
+export const TextContainer = styled.div`
+    display: flex;
+    z-index: 10;
+    height: fit-content;
+    gap: 2rem;
+`
+
+export const HyperTextContainer = styled.div`
+
+`
+
