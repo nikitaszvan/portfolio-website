@@ -1,56 +1,77 @@
 import styled from "styled-components";
-import { motion } from 'framer-motion';
 
 export const StyledH1 = styled.h1`
-  position: relative;
-  font-size: 48px;
-  font-weight: bold;
-  color: white; /* Text color before hover */
-  background: linear-gradient(to right, #ff7e5f, #feb47b);
-  background-size: cover;
-  display: inline-block;
-  overflow: hidden;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  // position: relative;
+  // font-size: 48px;
+  // font-weight: bold;
+  // color: white; /* Text color before hover */
+  // background: linear-gradient(to right, #ff7e5f, #feb47b);
+  // background-size: cover;
+  // display: inline-block;
+  // overflow: hidden;
+  // -webkit-background-clip: text;
+  // background-clip: text;
+  // color: transparent;
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: inherit; /* Use the same background image */
-    background-clip: padding-box;
-    mask-image: radial-gradient(circle, transparent 1rem, rgba(0, 0, 0, 1) 1rem); /* Creates a circular mask */
-    transition: mask-image 0.3s ease;
-  }
 
-  &:hover::before {
-    mask-image: radial-gradient(circle, transparent 1rem, rgba(0, 0, 0, 1) 2rem);
-  }
 `
 
-// export const MotionDiv = styled(motion.div)`
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     background: linear-gradient(90deg, rgba(255, 0, 0, 0.5), rgba(0, 0, 255, 0.5));
-
-//     pointer-events: none;
-//     transition: opacity 0.3s ease;
-// `
+export const GradientWrapper = styled.div`
 
 
-// export const GradientWrapper = styled.div`
-//     display: inline-block;
-//     position: relative;
-//     cursor: pointer;
 
-//     &:hover ${StyledH1} {
-//         opacity: 1;
-//     }
-// `
+/* button */
+h1 {
+  font-family: 'Jersey 25';
+  border: none;
+  outline: none;
+  color: #FFF;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 12px;
+  font-size: 64px;
+  margin: 0;
+}
+/* glow */
+h1::before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #FF0000, #FF7300, #FFFB00, #48FF00,
+    #00FFD5, #002BFF, #FF00C8, #FF0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 600%;
+  z-index: -1;
+  width: calc(100% + 4px);
+  height:  calc(100% + 4px);
+  filter: blur(8px);
+  animation: glowing 20s linear infinite;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+  opacity: 0;
+}
+
+@keyframes glowing {
+  0% {background-position: 0 0;}
+  50% {background-position: 400% 0;}
+  100% {background-position: 0 0;}
+}
+
+/* hover */
+h1:hover::before {
+  opacity: 1;
+}
+
+h1:active:after {
+  background: transparent;
+}
+
+h1:active {
+  color: #000;
+  font-weight: bold;
+}
+`
