@@ -6,5 +6,5 @@ export const MotionH1 = styled(motion.h1)`
     font-size: inherit;
     margin: 0;
     display: inline-flex;
-    color: #64FFDA;
+    color: var(--accent-color);
 `

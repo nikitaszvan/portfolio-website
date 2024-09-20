@@ -1,10 +1,10 @@
-import styled from 'styled-components';
-import { ReactComponent as LogoSvg } from '../../assets/logo.svg';
+import styled, { keyframes } from 'styled-components';
+
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #0a0a0a;
+  background-color: var(--background-color);
   gap: 0px;
   height: 100vh;
   width: 100%;
@@ -24,126 +24,16 @@ export const OverlayContainer = styled.div`
 
 `
 
-export const LandingPageHeader = styled.div`
-  display: flex;
-  position: absolute;
-  top: 1.5rem;
-  width: 70%;
-  justify-content: space-around;
-  align-items: center;
-
-  > nav {
-    display: flex;
-    gap: 2rem;
-    margin-left: auto;
-  }
-  
-  > button {
-    display: flex;
-    margin-left: 4rem;
-    font-weight: 600;
-    color: #64FFDA;
-    border: none;
-    background-color: transparent;
-    font-family: 'Jetbrains Mono';
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    transition: 0.25s;
-    box-shadow: 0.3em 0.3em 0 0 #64FFDA, inset 0.3em 0.3em 0 0 #64FFDA;
-    &:hover, &:focus { 
-      color: black;
-      box-shadow: 
-      0 0 0 0 #64FFDA,
-      inset 6em 3.5em 0 0 #64FFDA;
-    }
-  }
-
-  > nav > a {
-    font-family: 'Jetbrains Mono';
-    color: white;
-    text-decoration: none;
-
-    > * {
-      transition: color 0.3s ease 0.3s;
-    }
-
-    > span {
-      transition: opacity 0.3s ease;
-    }
-
-    > span:nth-of-type(2) {
-      letter-spacing: 0.25ch;
-    }
-
-    &:hover > span:nth-of-type(1) {
-      opacity: 1;
-    }
-
-    &:hover > span:nth-of-type(2) {
-      opacity: 1;
-    }
-
-    &:hover {
-      color: #64FFDA;
-    }
-
-    &:hover > * {
-      color: #64FFDA;
-    }
-
-    > span:nth-of-type(1), > span:nth-of-type(2) {
-      opacity: 0;
-    }
-  }
-
-`
-
-export const LogoSvgStyled = styled(LogoSvg)`
-  width: 5rem;
-  height: auto;
-  overflow: visible; /* Ensure overflow is visible */
-
-  path:nth-of-type(1) {
-    transition: fill 0.3s ease;
-  }
-
-  mask {
-    transition: transform 0.3s ease;
-    transform-origin: 0% 80%; 
-  }
-
-  path:nth-of-type(2) {
-    transition: transform 0.3s ease;
-    transform-origin: 0% 80%; 
-  }
-
-  &:hover path:nth-of-type(1) {
-    fill: #64FFDA;
-  }
-
-  &:hover mask {
-    transform: rotate(20deg);
-  }
-
-  &:hover path:nth-of-type(2) {
-    transform: rotate(20deg);
-  }
-`
-
 export const TextContainer = styled.div`
   font-family: 'Inter';
   color: white;
   z-index: 2;
   text-align: left;
   white-space: pre;
-  width: 70%;
+  width: 60%;
   position: relative;
-  bottom: 4rem;
-
-  // > h3 {
-  //   font-size: 36px;
-  //   font-family: 'Jetbrains Mono';
-  // }
+  margin-top: auto;
+  margin-bottom: auto;
 
   > * {
     margin: 0;
@@ -154,24 +44,78 @@ export const TextContainer = styled.div`
   }
 
   > h1 , > div > h1 {
-    font-size: 68px;
+    font-size: 60px;
     font-weight: 600;
   }
 
-  > h1:nth-of-type(1) {
-    font-size: 60px;
+  > h1:nth-of-type(2) {
+    opacity: 80%;
   }
 
   > div:nth-of-type(2) {
     position: relative;
     width: fit-content;
     height: fit-content;
-    // padding: 0.75rem 1rem;
-    // color: #64FFDA;
-    // border: 1px solid #64FFDA;
-    // border-radius: 4px;
-    // background-color: transparent;
-    // font-family: 'Jetbrains Mono';
+  }
+
+  > p {
+    width: 70%;
+    text-wrap: wrap;
+    margin-top: 1rem;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 2rem;
+    opacity: 1;
+    font-family: 'Jetbrains Mono';
+  }
+
+  > button {
+    font-size: 16px;
+    padding: 1rem 2rem;
+    margin-block: 1rem;
+  }
+`
+
+const RotateSvg = keyframes`
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+`
+
+export const SocialContainer = styled.div`
+  position: fixed;
+  width: fit-content;
+  height: fit-content;
+  left: 5%;
+  bottom: 0;
+  gap: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  > svg {
+    stroke: white;
+    width: 1.6rem;
+    height: 1.6rem;
+
+    &:hover:not(svg:last-child) {
+      stroke: var(--accent-color);
+    }
+  }
+
+    > svg:not(svg:last-child) {
+      cursor: pointer;
+    }
+
+  > svg:last-child {
+    width: 2.6rem;
+    height: auto;
+    transform-style: preserve-3d;
+    animation: ${RotateSvg} 8s linear infinite;
+    transform-origin: center;
   }
 `
 
