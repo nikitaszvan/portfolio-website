@@ -42,9 +42,9 @@ export const AnimatedButton = styled.button`
     font-family: 'Jetbrains Mono';
     padding: 0.5rem 1rem;
     cursor: pointer;
-    transition: 0.25s;
     box-shadow: 0.3em 0.3em 0 0 var(--accent-color), inset 0.3em 0.3em 0 0 var(--accent-color);
-
+    transition: color 0.25s ease, box-shadow 0.25s ease;
+    
     &:hover, &:focus { 
       color: black;
       box-shadow: 

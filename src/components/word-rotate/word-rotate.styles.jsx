@@ -7,4 +7,6 @@ export const MotionH1 = styled(motion.h1)`
     margin: 0;
     display: inline-flex;
     color: var(--accent-color);
+    font-size: 3.8rem;
+    font-weight: 600;
 `

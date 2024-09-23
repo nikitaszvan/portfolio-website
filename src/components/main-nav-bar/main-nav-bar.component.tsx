@@ -1,6 +1,7 @@
-import { useRef, useEffect, FC } from 'react';
+import { useRef, useEffect, useState, FC } from 'react';
 import { 
-    MainNavBarContainer
+    MainNavBarContainer,
+    LogoContainer
 } from './main-nav-bar.styles';
 
 import { 
@@ -8,48 +9,52 @@ import {
     LogoSvgStyled
  } from '../styled-components/styled-components.styles';
 
-const MainNavBar: FC = () => {
+
+type MainNavBarProps = {
+    isIn?: boolean;
+}
+const MainNavBar: FC<MainNavBarProps> = ({isIn = false}: MainNavBarProps) => {
         const navRef = useRef<HTMLDivElement | null>(null);
+        const [navOffset, setNavOffset] = useState(0);
+
     
         useEffect(() => {
             let lastScrollTop = 0;
+            if (navRef.current) {
+                const navOffset = navRef.current.clientHeight + parseFloat(window.getComputedStyle(navRef.current).marginTop);
+                setNavOffset(navOffset);
+            }
     
             const handleScroll = () => {
                 if (navRef.current) {
                     const scrollTop = window.scrollY || document.documentElement.scrollTop;
                     const navHeight = navRef.current.clientHeight;
-                    console.log(navRef);
-                    const navTop = navRef.current.clientTop;
-                    const triggerHeight = navHeight * 0.7; // 70% of the navbar height
+                    const triggerHeight = navHeight * 0.7;
     
                     if (scrollTop > triggerHeight) {
                         if (scrollTop > lastScrollTop) {
-                            // Scrolling down
-                            navRef.current.style.transform = `translateY(-${navHeight}px)`; // Hide the navbar
+                            navRef.current.style.transform = `translateY(-${navHeight}px)`;
                             navRef.current.style.marginTop = `0`;
                         } else {
-                            // Scrolling up
-                            navRef.current.style.transform = 'translateY(0)'; // Show the navbar
+                            navRef.current.style.transform = 'translateY(0)'; 
                             navRef.current.style.marginTop = `1.5rem`;
                         }
                     } else {
-                        // Reset position if not scrolled 70% of the height
                         navRef.current.style.transform = 'translateY(0)';
                     }
-                    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+                    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
                 }
             };
     
             window.addEventListener('scroll', handleScroll);
     
-            // Cleanup listener on unmount
             return () => {
                 window.removeEventListener('scroll', handleScroll);
             };
         }, []);
 
     return (
-        <MainNavBarContainer ref={navRef}>
+        <MainNavBarContainer ref={navRef} isIn={isIn} navOffset={navOffset}>
             <a href="/">
               <LogoSvgStyled/>
             </a>

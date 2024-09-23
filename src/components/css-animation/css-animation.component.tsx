@@ -1,19 +1,21 @@
-import React, { useRef, forwardRef } from 'react';
+import { useRef, useState, useEffect, forwardRef, ReactNode, CSSProperties } from 'react';
 import { Transition } from 'react-transition-group';
-import { CollapseRoot } from './css-animation.styles';
+import { 
+  CollapseRoot,
+} from './css-animation.styles';
 
 type CollapseProps = {
   in: boolean;
-  children: React.ReactNode;
-  collapsedSize?: string;
+  children: ReactNode;
   timeout?: number;
+  delay?: number;
+  childrenStyle?: CSSProperties;
   [key: string]: any;
 }
 
 export const CollapseAndFade = forwardRef<HTMLDivElement, CollapseProps>(
-  ({ in: inProp, children, collapsedSize = '0px', timeout = 300, ...other }, ref) => {
+  ({ in: inProp, children, timeout=1, delay=0, childrenStyle={}, ...other }, ref) => {
     const nodeRef = useRef<HTMLDivElement | null>(null);
-    const contentRef = useRef<HTMLDivElement | null>(null);
 
     const handleEntering = () => {
       if (nodeRef.current) {
@@ -24,7 +26,7 @@ export const CollapseAndFade = forwardRef<HTMLDivElement, CollapseProps>(
 
     const handleExiting = () => {
       if (nodeRef.current) {
-        nodeRef.current.style.height = collapsedSize;
+        nodeRef.current.style.height = '0';
         nodeRef.current.style.opacity = '0';
       }
     };
@@ -39,15 +41,14 @@ export const CollapseAndFade = forwardRef<HTMLDivElement, CollapseProps>(
         {...other}
       >
         {(state) => (
-          <CollapseRoot
-          ref={nodeRef}
-          style={{ overflow: 'hidden', transition: `height ${timeout}ms ease, opacity ${timeout}ms ease` }}
-          {...other}
-        >
-          <div ref={contentRef} style={{ opacity: inProp ? 1 : 0 }}>
-            {children}
-          </div>
-        </CollapseRoot>
+          <CollapseRoot 
+            timeout={timeout}
+            delay={delay}
+          >
+              <div ref={nodeRef}>
+                {children}
+              </div>
+          </CollapseRoot>
         )}
       </Transition>
     );

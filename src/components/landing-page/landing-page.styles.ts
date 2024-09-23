@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-
+import { AnimatedButton } from '../styled-components/styled-components.styles';
 
 export const Container = styled.div`
   display: flex;
@@ -30,50 +30,28 @@ export const TextContainer = styled.div`
   z-index: 2;
   text-align: left;
   white-space: pre;
-  width: 60%;
-  position: relative;
+  width: 65%;
   margin-top: auto;
   margin-bottom: auto;
+  padding-left: 10%;
+`
 
-  > * {
-    margin: 0;
-  }
+export const StyledH1 = styled.h1`
+  font-size: 3.8rem;
+  font-weight: 600;
+  margin-block: 0;
+`
 
-  > h1:nth-of-type(2), > div:nth-of-type(1) {
-    display: inline-flex;
-  }
+export const StyledP = styled.p`
+  font-size: 18px;
+  font-weight: 400;
+  font-family: 'Jetbrains Mono';
+  margin-block: 0.5rem 1rem;
+`
 
-  > h1 , > div > h1 {
-    font-size: 60px;
-    font-weight: 600;
-  }
-
-  > h1:nth-of-type(2) {
-    opacity: 80%;
-  }
-
-  > div:nth-of-type(2) {
-    position: relative;
-    width: fit-content;
-    height: fit-content;
-  }
-
-  > p {
-    width: 70%;
-    text-wrap: wrap;
-    margin-top: 1rem;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 2rem;
-    opacity: 1;
-    font-family: 'Jetbrains Mono';
-  }
-
-  > button {
-    font-size: 16px;
-    padding: 1rem 2rem;
-    margin-block: 1rem;
-  }
+export const StyledButton = styled(AnimatedButton)`
+  font-size: 16px;
+  padding: 1rem 2rem;
 `
 
 const RotateSvg = keyframes`
@@ -85,7 +63,7 @@ const RotateSvg = keyframes`
     }
 `
 
-export const SocialContainer = styled.div`
+export const SocialContainer = styled.div<{ isIn: boolean, leftOffset: number }>`
   position: fixed;
   width: fit-content;
   height: fit-content;
@@ -100,6 +78,25 @@ export const SocialContainer = styled.div`
     stroke: white;
     width: 1.6rem;
     height: 1.6rem;
+    position: relative;
+    ${({ isIn = false, leftOffset = 0 }) => !isIn ? `right: calc(${leftOffset}px + 1.6rem + 100% )` : 'right: 0'};
+    transition: right 0.75s cubic-bezier(0.645,0.045,0.355,1);
+
+    &:nth-of-type(2) {
+      transition-delay: 0.25s;
+    }
+
+    &:nth-of-type(3) {
+      transition-delay: 0.5s;
+    }
+
+    &:nth-of-type(4) {
+      transition-delay: 0.75s;
+    }
+
+    &:nth-of-type(5) {
+      transition-delay: 1s;
+    }
 
     &:hover:not(svg:last-child) {
       stroke: var(--accent-color);

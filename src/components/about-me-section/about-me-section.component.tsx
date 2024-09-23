@@ -1,8 +1,15 @@
-import { AboutMeContainer } from "./about-me-section.styles";
+import { 
+    AboutMeContainer,
+    TextContainer
+} from "./about-me-section.styles";
 
 const AboutMeSection = () => {
     return (
-        <AboutMeContainer />
+        <AboutMeContainer>
+            <TextContainer>
+                <h1><span>&lt;</span>About Me<span>/&gt;</span></h1>
+            </TextContainer>
+        </AboutMeContainer>
     )
 }
 
