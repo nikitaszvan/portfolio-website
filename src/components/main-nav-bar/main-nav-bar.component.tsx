@@ -17,7 +17,6 @@ const MainNavBar: FC<MainNavBarProps> = ({isIn = false}: MainNavBarProps) => {
         const navRef = useRef<HTMLDivElement | null>(null);
         const [navOffset, setNavOffset] = useState(0);
 
-    
         useEffect(() => {
             let lastScrollTop = 0;
             if (navRef.current) {

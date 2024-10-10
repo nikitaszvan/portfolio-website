@@ -8,7 +8,7 @@ import {
   StyledH1,
   StyledP,
   StyledButton
-} from './landing-page.styles'
+} from './landing-page.styles';
 
 import { 
   CollapseAndFade,
@@ -16,44 +16,66 @@ import {
 
 import LandingPageBackground from '../landing-page-background/landing-page-background.component';
 import Particles from '../particles/particles.component';
-import WordRotate from '../word-rotate/word-rotate.component';// import HyperText from '../hyper-text/hyper-text.component';
+import WordRotate from '../word-rotate/word-rotate.component';
 import MainNavBar from '../main-nav-bar/main-nav-bar.component';
 
 
 const LandingPage = () => {
-  const socialRef = useRef<HTMLDivElement | null>(null); // Type the ref correctly
+  const socialRef = useRef<HTMLDivElement | null>(null);
   const [divOffsetLeft, setDivOffsetLeft] = useState<number>(0);
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Delay for 2 seconds before setting the state
+          const timer = setTimeout(() => {
+            setIsOpen(true);
+          }, 1000);
+
+          // Cleanup timer on unmount or if the observer fires again
+          return () => clearTimeout(timer);
+        }
+      });
+    });
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     if (socialRef.current) {
       setDivOffsetLeft(socialRef.current.offsetLeft);
-  }
+    }
   }, [])
 
-  const toggleCollapse = () => {
-      setIsOpen(prev => !prev);
-  };
-
   return (
-    <Container>
+    <Container ref={ref}>
         <LandingPageBackground />
         <Particles />
         <OverlayContainer>
-          <button onClick={toggleCollapse}></button>
           <MainNavBar isIn={isOpen}/>
           <TextContainer>
-            <CollapseAndFade in={isOpen} timeout={0.3} delay={0.25}>
+            <CollapseAndFade in={isOpen} timeout={0.5} delay={0}>
               <StyledH1>👋 Hi, I'm Nikita Van</StyledH1>
             </CollapseAndFade>
-            <CollapseAndFade in={isOpen} timeout={0.3} delay={0.5}>
+            <CollapseAndFade in={isOpen} timeout={0.5} delay={0.25}>
               <StyledH1>I build </StyledH1>
               <WordRotate words={['Creative Design', 'Responsive Interfaces', 'User-Centered Solutions', 'Interactive Experiences', 'Dynamic Applications']} />
             </CollapseAndFade>
-            <CollapseAndFade in={isOpen} timeout={0.3} delay={0.75}>
+            <CollapseAndFade in={isOpen} timeout={0.5} delay={0.5}>
               <StyledP>& I'm a front-end developer based in Toronto, Canada 🇨🇦</StyledP>
             </CollapseAndFade>
-            <CollapseAndFade in={isOpen} timeout={0.3} delay={1}>
+            <CollapseAndFade in={isOpen} timeout={0.5} delay={0.75}>
               <StyledButton>
                 Check me out
               </StyledButton>

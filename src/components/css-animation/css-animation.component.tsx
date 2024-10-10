@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect, forwardRef, ReactNode, CSSProperties } from 'react';
+import { useRef, useCallback, useEffect, forwardRef, ReactNode, CSSProperties } from 'react';
 import { Transition } from 'react-transition-group';
 import { 
   CollapseRoot,
@@ -14,20 +14,28 @@ type CollapseProps = {
 }
 
 export const CollapseAndFade = forwardRef<HTMLDivElement, CollapseProps>(
-  ({ in: inProp, children, timeout=1, delay=0, childrenStyle={}, ...other }, ref) => {
+  ({ in: inProp = false, children, timeout=1, delay=0, childrenStyle={}, ...other }, ref) => {
     const nodeRef = useRef<HTMLDivElement | null>(null);
+    
+    useEffect(() => {
+      if (nodeRef.current) {
+        if (inProp) {
+          nodeRef.current.style.height = `${nodeRef.current.scrollHeight}px`;
+        } else {
+          nodeRef.current.style.height = '0';
+        }
+      }
+    }, [inProp]);
 
     const handleEntering = () => {
       if (nodeRef.current) {
         nodeRef.current.style.height = `${nodeRef.current.scrollHeight}px`;
-        nodeRef.current.style.opacity = '1';
       }
     };
 
     const handleExiting = () => {
       if (nodeRef.current) {
         nodeRef.current.style.height = '0';
-        nodeRef.current.style.opacity = '0';
       }
     };
 

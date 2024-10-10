@@ -34,6 +34,7 @@ export const TextContainer = styled.div`
   margin-top: auto;
   margin-bottom: auto;
   padding-left: 10%;
+  
 `
 
 export const StyledH1 = styled.h1`
@@ -64,6 +65,7 @@ const RotateSvg = keyframes`
 `
 
 export const SocialContainer = styled.div<{ isIn: boolean, leftOffset: number }>`
+
   position: fixed;
   width: fit-content;
   height: fit-content;
@@ -80,7 +82,7 @@ export const SocialContainer = styled.div<{ isIn: boolean, leftOffset: number }>
     height: 1.6rem;
     position: relative;
     ${({ isIn = false, leftOffset = 0 }) => !isIn ? `right: calc(${leftOffset}px + 1.6rem + 100% )` : 'right: 0'};
-    transition: right 0.75s cubic-bezier(0.645,0.045,0.355,1);
+    ${({ isIn = false }) => isIn ? 'transition: right 0.75s cubic-bezier(0.645,0.045,0.355,1)' : 'transition: none'};
 
     &:nth-of-type(2) {
       transition-delay: 0.25s;
@@ -115,5 +117,6 @@ export const SocialContainer = styled.div<{ isIn: boolean, leftOffset: number }>
     transform-origin: center;
   }
 `
+
 
 
